@@ -3,10 +3,6 @@ import { Todo } from '../models/todo';
 import { Observable, of } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { TodoService } from '../services/todo.service';
-import { TemplateRef, ElementRef } from '@angular/core';
-import { ViewChild } from '@angular/core';
-import { ContentChild } from '@angular/core';
-import { Log } from '@angular/core/testing/src/logger';
 
 @Component({
   selector: 'app-todos',
@@ -17,9 +13,6 @@ export class TodosComponent implements OnInit {
   todos$: Observable<Todo[]>;
 
   todoTitle: FormControl = new FormControl('');
-  
-  @ViewChild('itodo', { read: ElementRef })
-  inputTodo: ElementRef<HTMLButtonElement>;
 
   constructor(private todoService: TodoService) {}
 

@@ -1,8 +1,5 @@
 import { Input } from '@angular/core';
-import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Observable, of } from 'rxjs';
 import { Todo } from '../models/todo';
 import { TodoService } from '../services/todo.service';
 
@@ -12,11 +9,10 @@ import { TodoService } from '../services/todo.service';
   styleUrls: ['./todo.component.css'],
 })
 export class TodoComponent {
-
   constructor(private todoService: TodoService) {}
 
-  @Input() todo:Todo
- 
+  @Input() todo: Todo;
+
   completeTodo(id: number): void {
     this.todoService.completeTodo(id);
   }
