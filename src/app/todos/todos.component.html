@@ -1,0 +1,28 @@
+<div class="todos">
+  <!-- Todo: Create Form -->
+  <form class="newTodo">
+    <input
+      #itodo
+      name="text"
+      aria-label="Add todo"
+      placeholder="+ tap to add a todo"
+      [formControl]="todoTitle"
+      (keyup.enter)="createTodo()"
+    />
+  </form>
+  <!-- Todo: Incomplete -->
+  <ng-container *ngFor="let todo of todos$ | async">
+    <app-todo [todo]="todo"></app-todo>
+  </ng-container>
+  <ng-template [ngIf]="(todos$ | async).length === 0">
+    <div>
+      There aren't any todos. Why don't you
+      <span
+        style="color: blue; text-decoration: underline; cursor: pointer"
+        (click)="focus(itodo)"
+      >
+        create one?</span
+      >
+    </div>
+  </ng-template>
+</div>

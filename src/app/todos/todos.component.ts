@@ -17,6 +17,7 @@ export class TodosComponent implements OnInit {
   todos$: Observable<Todo[]>;
 
   todoTitle: FormControl = new FormControl('');
+  
   @ViewChild('itodo', { read: ElementRef })
   inputTodo: ElementRef<HTMLButtonElement>;
 

@@ -5,9 +5,7 @@ import { Todo } from '../models/todo';
 
 @Injectable({ providedIn: 'root' })
 export class TodoService {
-  todos: Todo[] = [
-    { id: 1, title: 'Learn Typescript language', isDone: false },
-  ];
+  todos: Todo[] = [];
   _todos$: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>(this.todos);
 
   getAllTodos(): Observable<Todo[]> {
